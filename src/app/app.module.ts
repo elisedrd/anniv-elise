@@ -4,7 +4,7 @@ import { RouterModule} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgbModule, NgbTimepickerModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { NumPadlockComponent } from './num-padlock/num-padlock.component';
 import { IndicesComponent } from './indices/indices.component';
@@ -26,7 +26,7 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    RouterModule.forChild([
+    RouterModule.forRoot([
       {
         path: '',
         component: HomeComponent
