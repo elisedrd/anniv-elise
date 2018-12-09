@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "deploy": "ngh --cname=elisedrd.cf",
+    "deploy": "ngh --dir docs --cname=elisedrd.cf",
     "start": "ng serve",
     "build": "ng build --prod --output-path docs",
     "test": "ng test",
