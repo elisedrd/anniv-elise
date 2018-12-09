@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "deploy": "ng build --prod --output-path docs && ngh --cname=elisedrd.cf",
+    "deploy": "ngh --cname=elisedrd.cf",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --output-path docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,11 +22,12 @@
     "@angular/router": "~7.1.0",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26",
-    "bootstrap": "^4.0.0"
+    "web-animations-js": "^2.3.1",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",

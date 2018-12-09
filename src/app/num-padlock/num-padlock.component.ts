@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {toInteger} from '@ng-bootstrap/ng-bootstrap/util/util';
-import {isNull, isNullOrUndefined} from 'util';
+import {fade, slideIn} from '../animations';
 
 @Component({
   selector: 'app-num-padlock',
   templateUrl: './num-padlock.component.html',
-  styleUrls: ['./num-padlock.component.css']
+  styleUrls: ['./num-padlock.component.css'],
+  animations: [
+    fade,
+    slideIn
+  ]
+
 })
 export class NumPadlockComponent implements OnInit {
   current = [2, 4, 0, 2];
