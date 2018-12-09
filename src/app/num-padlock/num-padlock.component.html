@@ -1,3 +1,58 @@
 <p>
-  num-padlock works!
+  numpad
 </p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="decrease(0)">-</button>
+    </div>
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="decrease(1)">-</button>
+    </div>
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="decrease(2)">-</button>
+    </div>
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="decrease(3)">-</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <input readonly [ngModel]="current[0]" class="form-control"/>
+    </div>
+    <div class="col-sm">
+      <input readonly  [ngModel]="current[1]" class="form-control"/>
+
+    </div>
+    <div class="col-sm">
+      <input readonly  [ngModel]="current[2]" class="form-control"/>
+
+    </div>
+    <div class="col-sm">
+      <input readonly  [ngModel]="current[3]" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="increase(0)">+</button>
+    </div>
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="increase(1)">+</button>
+    </div>
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="increase(2)">+</button>
+    </div>
+    <div class="col-sm">
+      <button class="btn btn-light" (click)="increase(3)">+</button>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="this.ok; then yes; else no">
+</p>
+
+<ng-template #yes> code is right</ng-template>
+<ng-template #no> code is wrong</ng-template>

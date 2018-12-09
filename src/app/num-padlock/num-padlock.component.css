@@ -1,0 +1,12 @@
+button {
+  width: 100%;
+  border-color: #ececec;
+  border-radius: 0;
+}
+
+input:read-only {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  border-radius: 0;
+  text-align: center;
+}
