@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {fade, slideIn} from '../animations';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-num-padlock',
@@ -9,36 +10,41 @@ import {fade, slideIn} from '../animations';
     fade,
     slideIn
   ]
-
 })
+
 export class NumPadlockComponent implements OnInit {
-  current = [2, 4, 0, 2];
-  code = [2, 4, 0, 5];
+  current = [0, 0, 0, 0];
+  codes = [[0, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0]];
+  code = [0, 0, 0, 0];
   ok = false;
 
-  constructor() { }
+constructor(private route: ActivatedRoute) { }
 
-  onChange(digit, newValue) {
-    this.current[digit] = +newValue;
-    console.log(digit);
-    console.log(this.current);
-    console.log(this.checkCode());
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+        let name = params.get('name');
+        if (parseInt(name, 10) < this.codes.length) {
+          this.code = this.codes[parseInt(name, 10)];
+        }
+      }
+    );
+    this.checkCode();
   }
 
   decrease(digit) {
     this.current[digit] === 0 ? this.current[digit] = 9 : this.current[digit] -= 1;
-    console.log(this.current);
-    console.log(this.checkCode());
+    console.log('current: ' + this.current);
+    console.log('code found ? ' + this.checkCode());
   }
 
   increase(digit) {
     this.current[digit] = (this.current[digit] + 1) % 10;
-    console.log(this.current);
-    console.log(this.checkCode());
+    console.log('current: ' + this.current);
+    console.log('code found ? ' + this.checkCode());
   }
 
   checkCode(): boolean {
-    console.log(this.code);
+    console.log('code: ' + this.code);
     for ( let i in this.code ) {
       if (this.code[i] !== this.current[i]) {
         this.ok = false;
@@ -48,8 +54,4 @@ export class NumPadlockComponent implements OnInit {
     this.ok = true;
     return true;
   }
-
-  ngOnInit() {
-  }
-
 }

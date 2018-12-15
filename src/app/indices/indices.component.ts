@@ -14,7 +14,8 @@ export class IndicesComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       let puzzle = params.get('puzzle');
       console.log(puzzle);
-      });
+      }
+    );
   }
 
 }

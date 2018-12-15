@@ -34,7 +34,7 @@ import {FormsModule} from '@angular/forms';
         component: HomeComponent
       },
       {
-        path: 'numpad',
+        path: 'numpad/:name',
         component: NumPadlockComponent
       },
       {
