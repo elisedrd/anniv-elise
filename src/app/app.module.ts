@@ -12,6 +12,7 @@ import { IndicesComponent } from './indices/indices.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
+import { PianoComponent } from './piano/piano.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from '@angular/forms';
     NumPadlockComponent,
     IndicesComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    PianoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,10 @@ import {FormsModule} from '@angular/forms';
       {
         path: 'indices/:puzzle',
         component: IndicesComponent
+      },
+      {
+        path: 'piano',
+        component: PianoComponent
       },
       {
         path: '**',
