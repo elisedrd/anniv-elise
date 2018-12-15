@@ -1,16 +1,21 @@
 <div id="p-wrapper">
+  <button (click)="this.reset()" type="button" class="btn btn-dark">Reset</button>
   <ul id="piano">
-    <li><div class="anchor"></div></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div></li>
-    <li><div class="anchor"></div><span></span></li>
-    <li><div class="anchor"></div><span></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w1')"></div></li>
+    <li><div class="anchor" (click)="this.pushKey('w2')"></div><span (click)="this.pushKey('b1')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w3')"></div></li>
+    <li><div class="anchor" (click)="this.pushKey('w4')"></div><span (click)="this.pushKey('b2')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w5')"></div><span (click)="this.pushKey('b3')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w6')"></div></li>
+    <li><div class="anchor" (click)="this.pushKey('w7')"></div><span (click)="this.pushKey('b4')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w8')"></div><span (click)="this.pushKey('b5')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w9')"></div><span (click)="this.pushKey('b6')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w10')"></div></li>
+    <li><div class="anchor" (click)="this.pushKey('w11')"></div><span (click)="this.pushKey('b7')"></span></li>
+    <li><div class="anchor" (click)="this.pushKey('w12')"></div><span (click)="this.pushKey('b8')"></span></li>
   </ul>
+</div>
+
+<div id="mbcRadioList" *ngIf="this.right">
+  YAY !
 </div>
