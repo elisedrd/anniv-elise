@@ -49,7 +49,7 @@ export class PianoComponent implements OnInit {
     this.right = true;
   }
 
-  // TODO factoriser les trois
+  // TODO factoriser les trois et preload les sons
   soundSuccess() {
     let audio = new Audio();
     audio.src = '../../../assets/audio/success.wav';
