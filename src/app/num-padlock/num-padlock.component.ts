@@ -52,6 +52,16 @@ constructor(private route: ActivatedRoute) { }
       }
     }
     this.ok = true;
+    this.soundSuccess();
     return true;
+  }
+
+  // TODO creer service audio
+  soundSuccess() {
+    let audio = new Audio();
+    audio.src = '../../../assets/audio/success.wav';
+    audio.volume = 0.1;
+    audio.load();
+    audio.play();
   }
 }
