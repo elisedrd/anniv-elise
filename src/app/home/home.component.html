@@ -1,3 +1,26 @@
-<p>
-  Home
-</p>
+<div class="container-fluid">
+  <div class="card" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" (click)="openDialog(i, codeModal)">
+    <div class="card-body">
+      <h5 class="card-title">{{i}}</h5>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="final-container">
+  <div class="final" (click)="openDialog(11, codeModal)">
+    <img src="../../assets/images/gift.png" height="15%" width="15%">
+  </div>
+</div>
+
+<ng-template #codeModal style="position: absolute; top: 250px; left: 250px;">
+  <body style="background-color: #394046">
+    <div class="modal-header" style="display: block">
+      <h4 style="text-align: center;">Code pour l'énigme {{i}} ?</h4>
+    </div>
+    <div class="modal-body">
+      <input (keyup)="checkCode($event)" placeholder="C0D3" style="color: black; width: 100%; text-align: center;">
+      <button class="btn btn-light" (click)="codeRight? closeDialog(codeModal): error();" [routerLink]="codeRight? ['/numpad/', i]: []" style="width: 100%; margin-top: 1%; font-weight: bold; color: #394046">SOUMETTRE</button>
+    </div>
+    <div class="modal-footer"></div>
+  </body>
+</ng-template>

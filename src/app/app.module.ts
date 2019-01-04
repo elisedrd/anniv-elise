@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { NumPadlockComponent } from './num-padlock/num-padlock.component';
-import { IndicesComponent } from './indices/indices.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
@@ -19,7 +18,6 @@ import { PianoComponent } from './piano/piano.component';
     AppComponent,
     HomeComponent,
     NumPadlockComponent,
-    IndicesComponent,
     NotFoundComponent,
     NavbarComponent,
     PianoComponent
@@ -36,12 +34,8 @@ import { PianoComponent } from './piano/piano.component';
         component: HomeComponent
       },
       {
-        path: 'numpad/:name',
+        path: 'numpad/:nb',
         component: NumPadlockComponent
-      },
-      {
-        path: 'indices/:puzzle',
-        component: IndicesComponent
       },
       {
         path: 'piano',

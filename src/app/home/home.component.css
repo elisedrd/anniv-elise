@@ -1,0 +1,39 @@
+.card {
+  position: relative;
+  top: 2em; left: 2em;
+  margin: 0 0 2em 2em;
+  width: 18em;
+  display: inline-block;
+  background-color: #394046;
+}
+
+.card-body:hover {
+  background-color: #394046;
+}
+
+.card-body {
+  height: 100%;
+  border: 1px solid #343a40;
+  background-color: #505962;
+}
+
+#final-container {
+  text-align: center;
+  margin-top: 10em;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.final:hover {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h5 {
+  text-align: center;
+}

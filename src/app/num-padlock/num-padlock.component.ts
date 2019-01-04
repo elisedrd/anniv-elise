@@ -14,7 +14,7 @@ import {ActivatedRoute} from '@angular/router';
 
 export class NumPadlockComponent implements OnInit {
   current = [0, 0, 0, 0];
-  codes = [[0, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0]];
+  codes = [[0, 0, 0, 0], [1, 0, 0, 0], [2, 0, 0, 0], [3, 0, 0, 0], [4, 0, 0, 0], [5, 0, 0, 0], [6, 0, 0, 0], [7, 0, 0, 0], [8, 0, 0, 0], [9, 0, 0, 0], [0, 1, 0, 0], [1, 1, 0, 0]];
   code = [0, 0, 0, 0];
   ok = false;
 
@@ -22,9 +22,9 @@ constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-        let name = params.get('name');
-        if (parseInt(name, 10) < this.codes.length) {
-          this.code = this.codes[parseInt(name, 10)];
+        let nb = params.get('nb');
+        if (parseInt(nb, 10) < this.codes.length) {
+          this.code = this.codes[parseInt(nb, 10)];
         }
       }
     );
