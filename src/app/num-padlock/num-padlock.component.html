@@ -1,5 +1,5 @@
 <p>
-  numpad
+  Enigme {{this.nb}}
 </p>
 
 <div class="container" @fade @slideIn>
@@ -54,5 +54,5 @@
 <p *ngIf="this.ok; then yes; else no">
 </p>
 
-<ng-template #yes> code is right</ng-template>
-<ng-template #no> code is wrong</ng-template>
+<ng-template #yes>Indice pour le code de la prochaine énigme : {{this.clue}}</ng-template>
+<ng-template #no>Mauvais code</ng-template>

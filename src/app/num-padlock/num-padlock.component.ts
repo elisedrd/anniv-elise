@@ -16,15 +16,19 @@ export class NumPadlockComponent implements OnInit {
   current = [0, 0, 0, 0];
   codes = [[0, 0, 0, 0], [1, 0, 0, 0], [2, 0, 0, 0], [3, 0, 0, 0], [4, 0, 0, 0], [5, 0, 0, 0], [6, 0, 0, 0], [7, 0, 0, 0], [8, 0, 0, 0], [9, 0, 0, 0], [0, 1, 0, 0], [1, 1, 0, 0]];
   code = [0, 0, 0, 0];
+  clues = ['default', 'default', 'clue2', 'clue3', 'clue4', 'clue5', 'clue6', 'clue7', 'clue8', 'clue9'];
+  clue = 'default';
   ok = false;
+  private nb;
 
 constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-        let nb = params.get('nb');
-        if (parseInt(nb, 10) < this.codes.length) {
-          this.code = this.codes[parseInt(nb, 10)];
+        this.nb = params.get('nb');
+        if (parseInt(this.nb, 10) < this.codes.length) {
+          this.code = this.codes[parseInt(this.nb, 10)];
+          this.clue = this.clues[parseInt(this.nb, 10)];
         }
       }
     );
@@ -56,7 +60,6 @@ constructor(private route: ActivatedRoute) { }
     return true;
   }
 
-  // TODO creer service audio
   soundSuccess() {
     let audio = new Audio();
     audio.src = '../../../assets/audio/success.wav';

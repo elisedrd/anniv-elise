@@ -12,6 +12,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
 import { PianoComponent } from './piano/piano.component';
+import { PuzzleComponent } from './puzzle/puzzle.component';
+import { InstructionsComponent } from './instructions/instructions.component';
+import { EndComponent } from './end/end.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { PianoComponent } from './piano/piano.component';
     NumPadlockComponent,
     NotFoundComponent,
     NavbarComponent,
-    PianoComponent
+    PianoComponent,
+    PuzzleComponent,
+    InstructionsComponent,
+    EndComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +42,22 @@ import { PianoComponent } from './piano/piano.component';
       {
         path: 'numpad/:nb',
         component: NumPadlockComponent
+      },
+      {
+        path: 'puzzle/1',
+        component: InstructionsComponent
+      },
+      {
+        path: 'puzzle/10',
+        component: PianoComponent
+      },
+      {
+        path: 'puzzle/11',
+        component: EndComponent
+      },
+      {
+        path: 'puzzle/:nb',
+        component: PuzzleComponent
       },
       {
         path: 'piano',

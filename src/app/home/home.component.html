@@ -15,11 +15,13 @@
 <ng-template #codeModal style="position: absolute; top: 250px; left: 250px;">
   <body style="background-color: #394046">
     <div class="modal-header" style="display: block">
-      <h4 style="text-align: center;">Code pour l'énigme {{i}} ?</h4>
+      <h4 *ngIf="i != 11" style="text-align: center;">Code pour l'énigme {{i}} ?</h4>
+      <h4 *ngIf="i == 11" style="text-align: center;">Code final ?</h4>
     </div>
     <div class="modal-body">
-      <input (keyup)="checkCode($event)" placeholder="C0D3" style="color: black; width: 100%; text-align: center;">
-      <button class="btn btn-light" (click)="codeRight? closeDialog(codeModal): error();" [routerLink]="codeRight? ['/numpad/', i]: []" style="width: 100%; margin-top: 1%; font-weight: bold; color: #394046">SOUMETTRE</button>
+      <p *ngIf="i == 1"> Le code pour l'énigme 1 est C0D3</p>
+      <input (keyup)="checkCode($event)" class="redBorder" [class.redBorder]="wrongCode" placeholder="C0D3" style="color: black; width: 100%; text-align: center;">
+      <button class="btn btn-light redBorder" [class.redBorder]="wrongCode" (click)="codeRight? closeDialog(codeModal): wrongCode = true;" [routerLink]="codeRight? ['/puzzle/', i]: []" style="width: 100%; margin-top: 1%; font-weight: bold; color: #394046">SOUMETTRE</button>
     </div>
     <div class="modal-footer"></div>
   </body>
