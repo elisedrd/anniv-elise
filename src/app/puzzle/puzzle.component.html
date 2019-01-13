@@ -1,41 +1,126 @@
-<p *ngIf="this.puzzleNb == 2">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<h2 class="puzzle-wrapper">
+  Enigme {{this.puzzleNb}}
+</h2>
 
-<p *ngIf="this.puzzleNb == 3">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 2" class="puzzle-wrapper">
+  <h4>
+    Ng eqfg guv :
+  </h4>
+  <h4>
+    -..&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;..-&nbsp;&nbsp;&nbsp;-..-
+  </h4>
+  <h4>
+    --..&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;.-.&nbsp;&nbsp;&nbsp;---
+  </h4>
+  <h4>
+    ..-&nbsp;&nbsp;&nbsp;-.
+  </h4>
+  <h4>
+    -.&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;..-&nbsp;&nbsp;&nbsp;..-.
+  </h4>
+</div>
 
-<p *ngIf="this.puzzleNb == 4">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 3" class="puzzle-wrapper" style="margin-top: 0;min-height: 70vh">
+  <app-slide-puzzle></app-slide-puzzle>
+</div>
 
-<p *ngIf="this.puzzleNb == 5">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 4" class="puzzle-wrapper">
+  <h4>
+    Pi gshi iwx :
+  </h4>
+  <h4>
+    1234 e p'irzivw
+  </h4>
+</div>
 
-<p *ngIf="this.puzzleNb == 6">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 5" class="puzzle-wrapper">
+  <h4>
+    Qj htij jxy :
+  </h4>
+  <h4>
+    0 0 1 0
+  </h4>
+  <h4>
+    0 1 1 0
+  </h4>
+  <h4>
+    0 1 0 0
+  </h4>
+  <h4>
+    0 1 1 1
+  </h4>
+</div>
 
-<p *ngIf="this.puzzleNb == 7">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 6" class="puzzle-wrapper">
+  <h4>
+    Rk iujk kyz :
+  </h4>
+  <h4>
+    Cr jfddv uvj uvlo uviezvij tfuvj dfzej kfe reevv uv erzjjretv
+  </h4>
+</div>
 
-<p *ngIf="this.puzzleNb == 8">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 7" class="puzzle-wrapper">
+  <h4>
+    Le code est :
+  </h4>
+  <img height="63" src="../../assets/images/points.PNG">
+  <span>&nbsp;+ (&nbsp;</span>
+  <img height="63" src="../../assets/images/traitsl2.PNG">
+  <span>&nbsp;*&nbsp;</span>
+  <img height="63" src="../../assets/images/traitsl3.PNG">
+  <span>&nbsp;)</span>
+</div>
 
-<p *ngIf="this.puzzleNb == 9">
-  puzzle yes {{this.puzzleNb}}
-  works!
-</p>
+<div *ngIf="this.puzzleNb == 8" class="puzzle-wrapper">
+  <h4>
+    1 - On m'appelle l'ovni
+  </h4>
+  <h4>
+    2 - La flûte enchantée
+  </h4>
+  <h4>
+    3 - Thriller
+  </h4>
+  <h4>
+    4 - La lettre à Elise
+  </h4>
+</div>
+
+<div *ngIf="this.puzzleNb == 9" class="puzzle-wrapper">
+  <h4>
+    Un lxmn nbc :
+  </h4>
+  <div class="wrapper" style="display: flex; flex-direction: row; justify-content: space-evenly">
+    <div class="text-wrapper">
+      <h4>
+        T &nbsp;O &nbsp;N	 &nbsp;A &nbsp;E
+      </h4>
+      <h4>
+        E	&nbsp;E	&nbsp;N	&nbsp;N &nbsp;C
+      </h4>
+      <h4>
+        D &nbsp;X	&nbsp;I	&nbsp;S &nbsp;N
+      </h4>
+      <h4>
+        E	&nbsp;N &nbsp;A	&nbsp;S &nbsp;A
+      </h4>
+    </div>
+    <div class="path">
+      <h4>
+        3> 1&#709; 3<
+      </h4>
+      <h4>
+        2&#709; 2> 1^
+      </h4>
+      <h4>
+        1> 1&#709;
+      </h4>
+      <h4>
+        1> 3^
+      </h4>
+    </div>
+  </div>
+</div>
 
 <app-num-padlock></app-num-padlock>

@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PianoComponent implements OnInit {
   counterRight = 0;
-  code = ['w1', 'b1', 'w2'];
+  code = ['b3', 'w4', 'w3', 'b6', 'w8', 'w6', 'w6', 'w7', 'b1', 'w12'];
+  clue = 'BRUN';
   right = false;
 
   constructor() { }

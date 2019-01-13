@@ -1,0 +1,41 @@
+h2 {
+  text-align: center;
+}
+
+.puzzle-wrapper {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+span {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.puzzle-wrapper {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {opacity: 1;
+    -webkit-transform: translateY(0%); }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
+  100% {opacity: 1;
+    transform: translateY(0%);}
+}
+

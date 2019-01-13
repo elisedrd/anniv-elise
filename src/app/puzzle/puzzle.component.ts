@@ -7,14 +7,13 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./puzzle.component.css']
 })
 export class PuzzleComponent implements OnInit {
-  private puzzleNb;
+  puzzleNb;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
         this.puzzleNb = params.get('nb');
-        console.log(this.puzzleNb);
       }
     );
   }

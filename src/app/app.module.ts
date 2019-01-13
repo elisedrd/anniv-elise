@@ -15,6 +15,7 @@ import { PianoComponent } from './piano/piano.component';
 import { PuzzleComponent } from './puzzle/puzzle.component';
 import { InstructionsComponent } from './instructions/instructions.component';
 import { EndComponent } from './end/end.component';
+import { SlidePuzzleComponent } from './slide-puzzle/slide-puzzle.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EndComponent } from './end/end.component';
     PianoComponent,
     PuzzleComponent,
     InstructionsComponent,
-    EndComponent
+    EndComponent,
+    SlidePuzzleComponent
   ],
   imports: [
     BrowserModule,

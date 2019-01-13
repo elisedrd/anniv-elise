@@ -1,6 +1,3 @@
-<p>
-  Enigme {{this.nb}}
-</p>
 
 <div class="container" @fade @slideIn>
   <div class="row">
@@ -51,8 +48,19 @@
   </div>
 </div>
 
-<p *ngIf="this.ok; then yes; else no">
+<p *ngIf="this.ok; then yes; else no" @fade>
 </p>
 
-<ng-template #yes>Indice pour le code de la prochaine énigme : {{this.clue}}</ng-template>
-<ng-template #no>Mauvais code</ng-template>
+<ng-template #yes>
+  <h2>
+    Indice pour trouver le code de la prochaine énigme :
+  </h2>
+  <h2>
+    <u>{{this.clue}}</u>
+  </h2>
+</ng-template>
+<ng-template #no>
+  <h3>
+    Mauvais code
+  </h3>
+</ng-template>

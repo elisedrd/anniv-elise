@@ -5,6 +5,17 @@
   color: white;
 }
 
+h2 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.puzzle-wrapper {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
 div#p-wrapper {
   padding-left: 30%;
   padding-top: 1em;
@@ -108,4 +119,55 @@ ul#piano li span:active {
   -webkit-box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
   -moz-box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
   box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {opacity: 1;
+    -webkit-transform: translateY(0%); }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
+  100% {opacity: 1;
+    transform: translateY(0%);}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes slideIn {
+  0% {opacity: 0;
+    -webkit-transform: translateX(-50%);
+  }
+  100% {opacity: 1;
+    -webkit-transform: translateX(0%); }
+}
+
+@keyframes slideIn {
+  0% {opacity: 0;
+    transform: translateX(-40%);
+    -webkit-transform: translateX(-40%);
+  }
+  100% {opacity: 1;
+    transform: translateX(0%);}
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
 }

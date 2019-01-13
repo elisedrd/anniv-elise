@@ -14,12 +14,13 @@ import {ActivatedRoute} from '@angular/router';
 
 export class NumPadlockComponent implements OnInit {
   current = [0, 0, 0, 0];
-  codes = [[0, 0, 0, 0], [1, 0, 0, 0], [2, 0, 0, 0], [3, 0, 0, 0], [4, 0, 0, 0], [5, 0, 0, 0], [6, 0, 0, 0], [7, 0, 0, 0], [8, 0, 0, 0], [9, 0, 0, 0], [0, 1, 0, 0], [1, 1, 0, 0]];
+  codes = [[0, 0, 0, 0], [0, 0, 0, 0], [2, 0, 1, 9], [8, 3, 5, 6], [4, 3, 2, 1], [2, 6, 4, 7], [8, 7, 8, 5], [0, 2, 1, 4], [2, 4, 3, 1], [2, 0, 0, 2]];
   code = [0, 0, 0, 0];
-  clues = ['default', 'default', 'clue2', 'clue3', 'clue4', 'clue5', 'clue6', 'clue7', 'clue8', 'clue9'];
+  clueGiven = [0, 2, 5, 8, 7, 10, 9, 11, 6, 4, 3];
+  clues = ['default', 'default', 'LUMOS', 'ESPACE', 'INCENDIE', 'DEESSE', 'AIR', 'SALE', 'COURS', 'DORMIR', 'BRUN', 'DORMIR'];
   clue = 'default';
   ok = false;
-  private nb;
+  nb;
 
 constructor(private route: ActivatedRoute) { }
 
@@ -48,7 +49,7 @@ constructor(private route: ActivatedRoute) { }
   }
 
   checkCode(): boolean {
-    console.log('code: ' + this.code);
+    //console.log('code: ' + this.code);
     for ( let i in this.code ) {
       if (this.code[i] !== this.current[i]) {
         this.ok = false;

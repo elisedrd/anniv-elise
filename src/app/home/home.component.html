@@ -1,28 +1,67 @@
-<div class="container-fluid">
-  <div class="card" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" (click)="openDialog(i, codeModal)">
-    <div class="card-body">
-      <h5 class="card-title">{{i}}</h5>
+<div [hidden]="this.dateIsGucci" class="countdown-big-wrapper animated fadeIn">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Disponible dans</h2>
+  <div class="countdown-wrapper">
+    <div class="days">
+      <h3>
+        {{this.days >= 10 ? this.days : '0' + this.days}} j
+      </h3>
+    </div>
+    <h3>
+      &nbsp;:&nbsp;
+    </h3>
+    <div class="hours">
+      <h3>
+        {{this.hours >= 10 ? this.hours : '0' + this.hours}} h
+      </h3>
+    </div>
+    <h3>
+      &nbsp;:&nbsp;
+    </h3>
+    <div class="minutes">
+      <h3>
+        {{this.minutes >= 10 ? this.minutes : '0' + this.minutes}} m
+      </h3>
+    </div>
+    <h3>
+      &nbsp;:&nbsp;
+    </h3>
+    <div class="seconds">
+      <h3>
+        {{this.seconds >= 10 ? this.seconds : '0' + this.seconds}} s
+      </h3>
     </div>
   </div>
 </div>
 
-<div class="container-fluid" id="final-container">
-  <div class="final" (click)="openDialog(11, codeModal)">
-    <img src="../../assets/images/gift.png" height="15%" width="15%">
+<div [hidden]="!this.dateIsGucci" class="animated fadeIn">
+  <div class="container-fluid animated fadeIn">
+    <div class="card" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" (click)="openDialog(i, codeModal)">
+      <div class="card-body">
+        <h5 class="card-title">{{i}}</h5>
+      </div>
+    </div>
   </div>
-</div>
 
-<ng-template #codeModal style="position: absolute; top: 250px; left: 250px;">
-  <body style="background-color: #394046">
-    <div class="modal-header" style="display: block">
-      <h4 *ngIf="i != 11" style="text-align: center;">Code pour l'énigme {{i}} ?</h4>
-      <h4 *ngIf="i == 11" style="text-align: center;">Code final ?</h4>
+  <div class="container-fluid" id="final-container">
+    <div class="final" (click)="openDialog(11, codeModal)">
+      <img src="../../assets/images/gift.png" height="15%" width="15%">
     </div>
-    <div class="modal-body">
-      <p *ngIf="i == 1"> Le code pour l'énigme 1 est C0D3</p>
-      <input (keyup)="checkCode($event)" class="redBorder" [class.redBorder]="wrongCode" placeholder="C0D3" style="color: black; width: 100%; text-align: center;">
-      <button class="btn btn-light redBorder" [class.redBorder]="wrongCode" (click)="codeRight? closeDialog(codeModal): wrongCode = true;" [routerLink]="codeRight? ['/puzzle/', i]: []" style="width: 100%; margin-top: 1%; font-weight: bold; color: #394046">SOUMETTRE</button>
-    </div>
-    <div class="modal-footer"></div>
-  </body>
-</ng-template>
+  </div>
+
+  <ng-template class="animated fadeIn" #codeModal style="position: absolute; top: 250px; left: 250px;">
+    <body style="background-color: #394046">
+      <div class="modal-header" style="display: block">
+        <h4 *ngIf="i != 11" style="text-align: center;">Code pour l'énigme {{i}} ?</h4>
+        <h4 *ngIf="i == 11" style="text-align: center;">Code final ?</h4>
+      </div>
+      <div class="modal-body">
+        <p *ngIf="i == 1"> Le code pour l'énigme 1 est C0D3</p>
+        <form>
+          <input (keyup)="checkCode($event)" class="redBorder" [class.redBorder]="wrongCode" placeholder="C0D3" style="color: black; width: 100%; text-align: center;">
+          <button type=submit class="btn btn-light redBorder" [class.redBorder]="wrongCode" (click)="isCodeRight()" [routerLink]="codeRight? ['/puzzle/', i]: []" style="width: 100%; margin-top: 1%; font-weight: bold; color: #394046">SOUMETTRE</button>
+        </form>
+      </div>
+      <div class="modal-footer"></div>
+    </body>
+  </ng-template>
+</div>

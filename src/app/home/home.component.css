@@ -61,3 +61,56 @@ input.redBorder {
     transform: translate3d(1px, -1px, 0);
   }
 }
+
+.countdown-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.countdown-big-wrapper {
+  border: 2px solid white;
+  border-radius: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 3rem;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {opacity: 1;
+    -webkit-transform: translateY(0%); }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
+  100% {opacity: 1;
+    transform: translateY(0%);}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}

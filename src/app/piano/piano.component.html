@@ -1,5 +1,17 @@
-<div id="p-wrapper">
-  <button (click)="this.reset()" type="button" class="btn btn-dark">Reset</button>
+<div class="puzzle-wrapper animated fadeIn">
+  <h4>
+    Vk mywlsxkscyx ocd :
+  </h4>
+  <h4>
+    N - 3 . . 6 . . . . 1 .
+  </h4>
+  <h4>
+    B - . 4 3 . 8 6 6 7 . 12
+  </h4>
+</div>
+
+<div id="p-wrapper" class="animated slideIn">
+  <button (click)="this.reset()" type="button" class="btn btn-dark">Recommencer</button>
   <ul id="piano">
     <li><div class="anchor" (click)="this.pushKey('w1')"></div></li>
     <li><div class="anchor" (click)="this.pushKey('w2')"></div><span (click)="this.pushKey('b1')"></span></li>
@@ -16,6 +28,15 @@
   </ul>
 </div>
 
-<div id="mbcRadioList" *ngIf="this.right">
-  YAY !
-</div>
+
+<p *ngIf="this.right; then yes">
+</p>
+
+<ng-template #yes>
+  <h2>
+    Indice pour trouver le code de la prochaine énigme :
+  </h2>
+  <h2>
+    <u>{{this.clue}}</u>
+  </h2>
+</ng-template>
